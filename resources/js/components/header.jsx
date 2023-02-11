@@ -1,21 +1,32 @@
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 import styled from "styled-components";
-import logo from "../../../public/image/Wood_Life_logo.png"
+import logo from "../../../public/image/Wood_Life_logo.png";
+
+
+const HeaderContents = styled.header`
+    height: 84vh;
+    position: relative;
+`;
 
 const HeaderLeft = styled.div`
-    margin-top: 0px;
-    margin-left: 100px;
-    width: 450px;
-    height: 100vh;
+    margin-top: 0;
+    width: 360px;
+    padding: 0px 0 0 55px;
+    height: 89vh;
+    position: absolute;
+
     & img {
-        margin-left: 20px;
         width: 175px;
         margin-bottom: 30px;
     }
-`;
-const HeaderContents = styled.header`
-    margin-bottom: 80px;
+    & h2 {
+        padding: 35% 0px 0px 40px;
+        color: #fff;
+    }
 `;
 const HeaderLink = styled(Link)`
     text-decoration: none;
@@ -24,15 +35,36 @@ const HeaderLink = styled(Link)`
 `;
 const NavUl = styled.ul`
     margin-top: 0;
-    margin-left: 20px;
 `;
 
 const NavList = styled.li`
     list-style: none;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 `;
 const Icon = styled.div`
     display: flex;
+`;
+
+const HeaderImg = styled.div`
+    width: 1060px;
+    position: absolute;
+    top: 183px;
+    left: 20%;
+    z-index: 1;
+    padding-right: 4%;
+    & img {
+        width: 100%;
+    }
+`;
+
+const SNSIcon = styled(FontAwesomeIcon)`
+    font-size: 1.3em;
+    margin-right: 20px;
+    color: white;
+`;
+
+const HeaderSubtitle = styled.div`
+    position: absolute;
 `;
 
 const Header = (props) => {
@@ -60,30 +92,27 @@ const Header = (props) => {
                             <HeaderLink href="/">
                                 <NavList>お問い合せ</NavList>
                             </HeaderLink>
+                            <HeaderLink href="/">
+                                <NavList>会員ページ</NavList>
+                            </HeaderLink>
                             <Icon>
-                                <Link href="">
-                                    <i
-                                        className="fab fa-instagram"
-                                        target="_blank"
-                                    ></i>
-                                </Link>
-                                <Link
-                                    href="https://www.youtube.com/channel/UCJ1fsxdIX6WbDScv0F-_khw"
+                                <Link 
+                                    href="" 
                                     target="_blank"
                                 >
-                                    <i
-                                        className="fab fa-youtube"
-                                        target="_blank"
-                                    ></i>
+                                    <SNSIcon icon={faInstagram} />
+                                </Link>
+                                <Link 
+                                    href="https://www.youtube.com/channel/UCJ1fsxdIX6WbDScv0F-_khw" 
+                                    target="_blank"
+                                >
+                                    <SNSIcon icon={faYoutube}></SNSIcon>
                                 </Link>
                                 <Link
                                     href="http://blog.niwablo.jp/dekkiyasan/"
                                     target="_blank"
                                 >
-                                    <i
-                                        className="fa-solid fa-blog"
-                                        target="_blank"
-                                    ></i>
+                                    <SNSIcon icon={faBlog}></SNSIcon>
                                 </Link>
                             </Icon>
                         </NavUl>
@@ -91,18 +120,18 @@ const Header = (props) => {
                     <h2>Wood Life</h2>
                 </HeaderLeft>
 
-                <div className="slider_img">
+                <HeaderImg>
                     <img
-                        src="./image/endai03.png"
+                        src="./image/endai033.png"
                         id="slide_img"
                         className="slider img"
                     />
-                </div>
+                </HeaderImg>
 
-                <div className="header_content02">
+                <HeaderSubtitle>
                     <h4>生活をより豊かにする</h4>
                     <a href="./PHP/Login.php">ご相談はこちらから</a>
-                </div>
+                </HeaderSubtitle>
             </HeaderContents>
         </>
     );

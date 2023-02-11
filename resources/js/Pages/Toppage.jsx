@@ -1,10 +1,9 @@
 import Header from "../components/header";
-import "../../styles/index.css";
+import "../../css/index.css";
 const Toppage = () => {
     return (
         <>
             <Header backgroundColor={"#407c51"}></Header>
-            <h1>wellcome</h1>
         </>
     );
 };
