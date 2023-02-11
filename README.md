@@ -3,6 +3,5 @@
 # 使用技術
 - Laravel 9.51.1
 - React 18.20
-- XAMPP
-  - Apache 8.0.3
-  - MySQL
+- inertia
+- MySQL
