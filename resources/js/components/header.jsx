@@ -1,86 +1,92 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faBlog } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 import styled from "styled-components";
-import logo from "../../../public/image/Wood_Life_logo.png";
 
 
 const HeaderContents = styled.header`
-    height: 84vh;
-    position: relative;
+    height: 11vh;
+    width: 100%;
+    display: flex;
 `;
 
-const HeaderLeft = styled.div`
-    margin-top: 0;
-    width: 360px;
-    padding: 0px 0 0 55px;
-    height: 89vh;
-    position: absolute;
-
-    & img {
-        width: 175px;
-        margin-bottom: 30px;
+const WoodlifeLogo = styled.div`
+    margin-left: 20px;
+    height: 100%;
+        & img {
+        height: 100%;
     }
-    & h2 {
-        padding: 35% 0px 0px 40px;
-        color: #fff;
+`
+const NavContents = styled.nav`
+    display: flex;
+    width: 600px;
+    margin-left: auto;
+    & ul {
+        width: 100%;
+        padding: 5px 0px;
+        display: flex;
+        align-items: center;
+        margin: 0px;
     }
 `;
+
 const HeaderLink = styled(Link)`
     text-decoration: none;
     color: #fff;
     font-size: 17px;
-`;
-const NavUl = styled.ul`
-    margin-top: 0;
-`;
-
-const NavList = styled.li`
-    list-style: none;
-    margin-bottom: 30px;
-`;
-const Icon = styled.div`
-    display: flex;
-`;
-
-const HeaderImg = styled.div`
-    width: 1060px;
-    position: absolute;
-    top: 183px;
-    left: 20%;
-    z-index: 1;
-    padding-right: 4%;
-    & img {
-        width: 100%;
+    padding: 5px 0px;
+    & li {
+        list-style: none;
+        padding: 5px 10px;
     }
-`;
-
-const SNSIcon = styled(FontAwesomeIcon)`
-    font-size: 1.3em;
-    margin-right: 20px;
-    color: white;
-`;
-
-const HeaderSubtitle = styled.div`
-    position: absolute;
+    & :hover {
+        text-decoration: underline;
+    }
 `;
 
 const Header = (props) => {
 
     return (
         <>
-            <HeaderContents>
-                {/* headerの背景は、以下の部分で定義される。(propsからの受け渡し) */}
+            <HeaderContents style={{ backgroundColor: props.backgroundColor }}>
+                <WoodlifeLogo>
+                    <img src="./image/Wood_Life_logo.png" alt="Wood_Life_logo" />
+                </WoodlifeLogo>
+                <NavContents>
+                    <ul>
+                        <HeaderLink href="/">
+                            <li>ホーム</li>
+                        </HeaderLink>
+                        <HeaderLink href="/About">
+                            <li>価格目安</li>
+                        </HeaderLink>
+                        <HeaderLink href="/">
+                            <li>施工例</li>
+                        </HeaderLink>
+                        <HeaderLink href="/">
+                            <li>会社概要</li>
+                        </HeaderLink>
+                        <HeaderLink href="/">
+                            <li>お問い合せ</li>
+                        </HeaderLink>
+                        <HeaderLink href="/">
+                            <li>会員ページ</li>
+                        </HeaderLink>
+                    </ul>
+                </NavContents>
+            </HeaderContents>
+
+            {/* <HeaderContents>
                 <HeaderLeft style={{backgroundColor : props.backgroundColor}}>
-                    <img src={logo} alt="Wood_Life_logo" />
+                    <img src="./image/Wood_Life_logo.png" alt="Wood_Life_logo" />
                     <nav>
                         <NavUl>
                             <HeaderLink href="/">
                                 <NavList>ホーム</NavList>
                             </HeaderLink>
-                            <HeaderLink href="/">
+                            <HeaderLink href="/About">
                                 <NavList>価格目安</NavList>
                             </HeaderLink>
                             <HeaderLink href="/">
@@ -96,24 +102,24 @@ const Header = (props) => {
                                 <NavList>会員ページ</NavList>
                             </HeaderLink>
                             <Icon>
-                                <Link 
-                                    href="" 
+                                <a
+                                    href=""
                                     target="_blank"
                                 >
                                     <SNSIcon icon={faInstagram} />
-                                </Link>
-                                <Link 
-                                    href="https://www.youtube.com/channel/UCJ1fsxdIX6WbDScv0F-_khw" 
+                                </a>
+                                <a
+                                    href="https://www.youtube.com/channel/UCJ1fsxdIX6WbDScv0F-_khw"
                                     target="_blank"
                                 >
                                     <SNSIcon icon={faYoutube}></SNSIcon>
-                                </Link>
-                                <Link
+                                </a>
+                                <a
                                     href="http://blog.niwablo.jp/dekkiyasan/"
                                     target="_blank"
                                 >
                                     <SNSIcon icon={faBlog}></SNSIcon>
-                                </Link>
+                                </a>
                             </Icon>
                         </NavUl>
                     </nav>
@@ -129,10 +135,9 @@ const Header = (props) => {
                 </HeaderImg>
 
                 <HeaderSubtitle>
-                    <h4>生活をより豊かにする</h4>
-                    <a href="./PHP/Login.php">ご相談はこちらから</a>
+                    <h4 className="sub-text">暮らしををより豊かにする</h4>
                 </HeaderSubtitle>
-            </HeaderContents>
+            </HeaderContents> */}
         </>
     );
 };
