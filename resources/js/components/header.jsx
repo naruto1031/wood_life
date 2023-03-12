@@ -5,47 +5,6 @@ import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 import styled from "styled-components";
 
-
-const HeaderContents = styled.header`
-    height: 11vh;
-    width: 100%;
-    display: flex;
-`;
-
-const WoodlifeLogo = styled.div`
-    margin-left: 20px;
-    height: 100%;
-        & img {
-        height: 100%;
-    }
-`
-const NavContents = styled.nav`
-    display: flex;
-    width: 600px;
-    margin-left: auto;
-    & ul {
-        width: 100%;
-        padding: 5px 0px;
-        display: flex;
-        align-items: center;
-        margin: 0px;
-    }
-`;
-
-const HeaderLink = styled(Link)`
-    text-decoration: none;
-    color: #fff;
-    font-size: 17px;
-    padding: 5px 0px;
-    & li {
-        list-style: none;
-        padding: 5px 10px;
-    }
-    & :hover {
-        text-decoration: underline;
-    }
-`;
-
 const Header = (props) => {
 
     return (
@@ -141,5 +100,45 @@ const Header = (props) => {
         </>
     );
 };
+
+const HeaderContents = styled.header`
+    height: 11vh;
+    width: 100%;
+    display: flex;
+`;
+
+const WoodlifeLogo = styled.div`
+    margin-left: 20px;
+    height: 100%;
+        & img {
+        height: 100%;
+    }
+`
+const NavContents = styled.nav`
+    display: flex;
+    width: 600px;
+    margin-left: auto;
+    & ul {
+        width: 100%;
+        padding: 5px 0px;
+        display: flex;
+        align-items: center;
+        margin: 0px;
+    }
+`;
+
+const HeaderLink = styled(Link)`
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    padding: 5px 0px;
+    & li {
+        list-style: none;
+        padding: 5px 10px;
+    }
+    & :hover {
+        text-decoration: underline;
+    }
+`;
 
 export default Header;

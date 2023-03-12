@@ -1,4 +1,5 @@
 import { Link } from "@inertiajs/inertia-react";
+import { use, useState } from "react";
 const About = () => {
     return (
         <>
@@ -16,5 +17,8 @@ const About = () => {
         </>
     );
 };
+
+
+
 
 export default About;
